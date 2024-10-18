@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- connects html to css-->
+  <title>Holiday Budget Calculator</title> <!-- name of website -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+
+<nav> <!-- navigation bar learnt from www3schools -->
+  <div class="icon-bar">
+    <a href="#" id="home-button"><i class="fa fa-home"></i></a> <!-- main home button that links users back home from each screen -->
+  </div>
+</nav>
+
+<!-- FIRST SCREEN -->
+
+<div id="screen-1">
+  <h1> Holiday Budget Calculator </h1> <!-- overall website title -->
+
+  <div class="images">
+    <div class="column"> <!-- image included is my own - location relevant to Holiday context -->
+      <img src="images/Location.jpg" alt="Location image" style="width:100%"> 
+    </div>
+    <div class="column"> <!-- image included is my own - views relevant to Holiday context-->
+      <img src="images/Views.jpg" alt="Views image" style="width:100%">
+    </div>
+    <div class="column"> <!-- image included is my own - food relevant to expense category-->
+      <img src="images/Food.jpg" alt="Food image" style="width:100%">
+    </div>
+  </div> 
+
+  <p> Are you planning a trip away and need to clarify your expenses? We've got you covered :)
+  Use our calculator below to confirm your holiday budget! </p> <!-- paragraph that provides context to the website/makes it clear for users -->
+
+  <button id="beginButton">Let's Begin</button> <!-- first button that lets users start the process -->
+</div>
+
+<!--SECOND SCREEN - USER BUDGET INPUT -->
+
+<div id="screen-2">
+  <h2> Budgeted Amount</h2> <!-- screen 2 title - user initial spending input -->
+
+  <div class="icon"> 
+   <i class="fa fa-cloud"></i>
+  </div> <!-- icon adds an interesting but simple element to the website - cloud used to references traveling by plane -->
+
+  <div class="second-page-inputs">
+
+  <div>
+  <table class="budget-table"> <!-- first table implementation -->
+    <tr> 
+      <th>Budget</th>
+    </tr> <!-- first table title -->
+    
+    <tr class="table-inputs"> 
+       <td><input class="budget" type="number" name="budget" placeholder="$"></td>
+    </tr> <!-- firt table content - allows user to write/calculate their unique budget -->
+  </table>
+  </div>
+
+  <button id="nextButton">Next</button>
+  </div> <!-- second button that leads users to the expenses table screen -->
+</div>
+    
+<!--THIRD SCREEN - USER EXPENSE INPUT  -->
+
+<div id="screen-3">
+  <h2> Expenses </h2> <!-- screen 3 title - breakdown of individual categories of expenses -->
+
+  <div class="third-page-inputs">
+
+  <div class="expenses">
+  <table class="expenses-table"> <!-- second table implementation - with more rows -->
+
+    <tr class = table-title2>
+      <th>Transport</th>
+      <th>Accomodation</th>
+      <th>Food</th>
+    </tr> <!-- main three expense categories as headings -->
+
+    <tr class = table-subtitle>
+      <th>Airport</th>
+      <th>Hotel 1</th>
+      <th>Breakfast</th>
+    </tr> <!-- first row of expenses relevant to all three categories mentioned above -->
+
+    <tr class="table-inputs"> 
+      <td><input class="transport-item1" type="number" name="value" placeholder="$"></td>
+      <td><input class="accomodation-item1" type="number" name="value" placeholder="$"></td>
+      <td><input class="food-item1" type="number" name="value" placeholder="$"></td>
+    </tr> <!-- first row content - users add their estimated spends for the airport transport, accomodation 1 and breakfast -->
+
+      <tr class = table-subtitle2>
+      <th>Hotel</th>
+      <th>Airbnb</th>
+      <th>Lunch</th>
+    </tr> <!-- second row of expenses relevant to all three categories mentioned above -->
+
+    <tr class="table-inputs"> 
+      <td><input class="transport-item2" type="number" name="value" placeholder="$"></td>
+      <td><input class="accomodation-item2" type="number" name="value" placeholder="$"></td>
+      <td><input class="food-item2" type="number" name="value" placeholder="$"></td>
+    </tr> <!-- second row content - users add their estimated spends for hotel transport, accomodation 2 and lunch -->
+
+    <tr class = table-subtitle3>
+      <th>Activities</th>
+      <th>Hotel 2</th>
+      <th>Dinner</th>
+    </tr> <!-- third row of expenses relevant to all three categories mentioned above -->
+
+    <tr class="table-inputs"> 
+      <td><input class="transport-item3" type="number" name="value" placeholder="$"></td>
+      <td><input class="accomodation-item3" type="number" name="value" placeholder="$"></td>
+     <td><input class="food-item3" type="number" name="value" placeholder="$"></td>
+    </tr> <!-- third row content - users add their estimated spends for activity transport, accomodation 3 and dinner -->
+  </table>
+</div>
+
+  <button id="calculateButton">Calculate</button>
+  </div>  <!-- third button that leads users to the result table screen -->
+</div>
+
+
+<!--FORTH PAGE - OUTPUT TO -->
+
+<div id="screen-4">
+  <h2> Results ($) </h2> <!-- screen 4 title - breakdown of results that show the users outputs -->
+
+  <div class="results">
+    <table class="result-table">
+    
+      <tr class = result> 
+        <th>Net Result</th> <!-- title for net results -->
+        <th>Total of All Expenses</th> <!-- title for total expenses-->
+        <th>Average Expense Item</th> <!-- title for average expenses -->
+      </tr> <!-- three main output results as headings -->
+
+      <tr class="result-inputs"> 
+        <td class="net-result-value"></td>
+        <td class="total-expenses-value"></td>
+        <td class="average-expense-item-value"></td>
+      </tr> <!-- first row of results - users initial input + expenses are calculated to then show their estimated budgets outcome in regards to net value/total expenses/average expenses -->
+
+      <tr class = indi-result>
+        <th>Total Transport Expenses</th>
+        <th>Total Accomodation Expenses</th>
+        <th>Total Food Expenses</th>
+        </tr> <!-- headings for the three main expense categories (1. transport, 2. accomodation, 3. food) -->
+
+      <tr class="indi-result-inputs"> <!-- each category shows the average expense result of the 3 individual categories -->
+        <td class="transport-subtotal-value"></td> <!-- airport result ($) + hotel result ($) + activity result ($) /3 -->
+        <td class="accomodation-subtotal-value"></td> <!-- hotel 1 result ($) + airbnb result ($) + hotel 2 result ($) /3 -->
+        <td class="food-subtotal-value"></td> <!-- breakfast result ($) + lunch result ($) + dinner result ($) /3 -->
+      </tr>
+    </table>
+
+    <div>
+      <p id="conditional-text"></p> <!-- leave blank because this information is stored -->
+      <img id="conditional-image" alt="conditional image"> <!-- says it is missing a src when i place into a html checker? - not sure -->
+    </div>
+
+    </div>
+    <button id="resButton">Restart</button> <!-- fourth button that leads users to the initial spending input screen (2) -->
+  </div>
+
+<script src="main.js"></script> <!-- at the end so java reads the above code -->
+</body>
+
+</html>
