@@ -2,204 +2,447 @@
   box-sizing: border-box;
 }
 
-/* ==========BODY============= */
+/* ========== BODY ============= */
 
-html {
+html { 
   scroll-padding-top: 100px;
+  scroll-behavior: smooth;
 }
 
-body {
+body { /* immediate text style and background colour unless specified */
   font-family: "sans-serif";
-  background-color: #ebeeef; 
+  background-color: #F8F6F5; 
   margin: 0; 
+}
+
+#sound-btn { /* size of the icon and colour */
+  font-size: 20px;
+  color:#BCA373; 
 }
 
 /* ==========NAVIGATION============= */
 
-.icon-bar {
+.icon-bar { 
   width: 100%; /* full-width */
-  background-color: #3d4c5f; /* dark-grey/blue background */
-  position: fixed; /* set the navbar to fixed position */
-  top: 0; /* position the navbar at the top of the page */
-  width: 100%; /* full width */
+  background-color: #FFFFFF; /* light shade */
+  overflow: auto; 
+  position:fixed; /* remains fixed in position as you scroll through the site */
+}
+
+.bar-button {
+  width: 50%;
 }
 
 .icon-bar a {
   float: left; /* float links side by side */
   text-align: center; /* center-align text */
-  width: 33.33%; /* 1/3 of the width  */
-  padding: 12px 0; /* some top and bottom padding */
+  width: 20%; /* 1/5 of the width  */
+  padding: 12px 0; /* some padding to enlarge the detail */
   transition: all 0.3s ease; /* add transition for hover effects */
-  color: white; /* white text color */
-  font-size: 36px; /* increased font size */
+  color:#BCA373; /* gold colour - translates from brands logo*/
+  font-size: 30px; /* chosen font size */
 }
 
 .icon-bar a:hover {
-  background-color: #7da7c6; /* a different colour to distinguish a hover */
+  background-color:#F0E3DA; /* a different colour to distinguish a hover */
 }
 
+/* ========== GIF VIDEO ============= */
 
-/* ========== SCREEN ONE STYLING ============= */
+video {
+  padding-top: 3%; /* starts slightly below the nav bar */
+  width:100vw; /* takes up entire screen width */ 
+}
 
-/* ========== SCREEN TITLE============= */
+/* ========== ABOUT US PAGE ============= */
 
-h1 {
-  margin-top: 150px; /* distance from navigation bar */
-  font-family: "sans-serif";
-  font-size: 50px; /* main title for this page therefore largest size */
-  color: #3d4c5f; /* text colour to match navigation bar */
+h2 {
+  font-size: 40px; /* main title for this page therefore largest size */
+  color: #400E0E; /* text colour to stand out against light background */
+  text-align: center; /*center text in the middle  */
+  padding-right: 60%; /* to prevent text spanning the entire length of the screen */
+  padding-left: 15%; /* to prevent text spanning the entire length of the screen */
+} 
+
+p {
+  text-align: center; /*center text in the middle */
+  font-size: 18px; /* smaller font for larger body of text */
+  color: #400E0E; /* reoccuring colour-way */
+  padding-right: 40%; /* to prevent text spanning the entire length of the screen */
+}
+
+.text-group { /* ensures items within this div centrally align */
+  padding-left:8%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+
+.imagery-group { /* size and position of image - to the right */ 
+  margin-top: 130px;
+  margin-bottom:130px;
+  width:90%;
+  padding-right: 8%;
+}
+
+.group-1 {
+  display: flex; /* text-group and imagery.group align horizontally next to one another */
+}
+
+/* ========== JEWELLERY CATEGORIES ============= */
+
+.title { /* further down section */
+  padding-bottom: 3%; 
+  padding-top:3%;
+}
+
+div.gallery { /* enclosure principle */
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover { /* hover animation */
+  border: 1px solid #777;
+}
+
+div.gallery img { /* specific to images within div */
+  width: 100%;
+  height: auto;
+  opacity: 1.0;
+}
+
+.gallery:hover { /* hover animation */
+  opacity: 0.9;
+  background-color:#BCA373;
+}
+
+div.desc1 { /* distance between image and anchor tag */
+  padding: 5px;
+  text-align: center;
+}
+
+div.desc1 a { /* visuals for the anchor tag */
+  text-decoration: none;
+  color:#400E0E;
+  padding-bottom:18%;
+}
+
+.responsive { /* below code - the useage of @media means visuals are responsive to screen sizes */
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+  padding-bottom: 70px;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ========== EARRING STACK ============= */
+
+.desc-1 { /* visuals for title above imagery gallery */
+  padding-top: 5%;
+  color:#400E0E;
+  text-align: center;
+  font-size: 20px;
+}
+
+div.desc { /* visuals for subtitles within image gallery */
+  text-align: center;
+  color:#400E0E;
+}
+
+div.desc2 { /* distance between subtitles and anchor tag */
+  padding: 5px;
+  text-align: center;
+}
+
+div.desc2 a { /* visuals for the anchor tag */
+  text-decoration: none;
+  color:#400E0E;
+  padding-bottom:18%;
+}
+
+.desc2 a:hover { /* additional colour change animation upon hover */
+  color:#BCA373;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========== REVIEW PAGE ============= */
+
+.half-half1 { /* container1 and container3 align horizontally */
+  display:flex;
+  background-color: #EFE1D8;
+}
+
+.container1 { /* 50% image visuals */
+  display: flex; /* use flexbox to align items */
+  height: 70vh; /* viewport height */
+  width: 50vw;
+}
+
+.image-half1 {
+  flex: 1; 
+  overflow: hidden; /* hide any overflow */
+}
+
+.image-half1 img {
+  width: 100%; /* full width of the container */
+  height: 100%; /* full height of the container */
+  object-fit: cover; /* cover the container while maintaining aspect ratio */
+}
+
+.container3 { /* remaining 50% image visuals */
+  display: flex; /* use flexbox for layout */
+  height: 70vh; 
+  width: 50vw; 
+  padding-top:50px;
+}
+
+.detail, .table-inputs { /* structure for table detail */ 
+  margin-top: 50px;
+  display: inline-block; 
+  margin-bottom:150px;
+  padding-left:20%;
+  width: 40%; 
+  height: 200px;
+  max-width: 500px; /* play wiht measurements to be large enough but not take up a huge amount of space */
+}
+
+.review-sent-btn {
+  background-color:#400E0E; /* matching text - bold against background */
+  border: none; 
+  color: white; /* white text against brown */
+  padding: 10px 30px; /* background space around text within button */
+  text-align: center; /* positioned in the center */
+  text-decoration: none;
+  cursor: pointer; /* user aware its a button which can be pressed */
+  font-size: 20px;
+  font-family: "sans-serif"; 
+  }
+
+.budget {
+  padding-bottom: 100%;
+  padding-right: 25%;
+  padding-left: 10%;
+}
+
+.table-tr {
+  padding-bottom: 20%;
+}
+
+/* ========== 50% IMAGE + 50% IMAGE GALLERY ============= */
+
+.half-half {  /* container1 and container2 align horizontally */
+  display:flex; 
+}
+
+.image-half1 {
+  flex: 1; /* repeating structure above */
+  overflow: hidden; /* hide any overflow */
+}
+
+.image-half1 img {
+  width: 100%; /* full width of the container */
+  height: 100%; /* full height of the container */
+  object-fit: cover; /* cover the container while maintaining aspect ratio */
+}
+
+.container2 {
+  display: flex; /* same layout as container1 */
+  height: 70vh;
+  width: 50vw; 
+}
+
+.gallery2 {
+  flex: 1; /* take up half the screen */
+  display: flex; /* use flexbox for the gallery */
+  flex-direction: column; /* stack images vertically */
+  overflow-y: scroll; /* allow vertical scrolling */
+  padding: 10px; /* padding around the gallery */
+}
+
+.gallery2 img {
+  width: 100%; /* full width of the container */
+  object-fit: cover; /* maintain aspect ratio */
+  height:55vh;
+}
+
+/* ========== SHARE THE LOVE ============= */
+
+div.scroll-container3 { /* horizontal image gallery */
+  overflow: auto;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+div.scroll-container3 img { /* images all the same measurements */
+  padding: 10px; /* creates space between images - more clear and neat */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #EFE1D8;
+}
+
+.group-3 { /* screen background colour */
+  background-color: #EFE1D8;
+}
+
+.title-3 { /* text within the page */
+  font-size: 40px; /* main title for this page therefore largest size */
+  color: #400E0E; 
   text-align: center; /*center of screen */
 }
 
-/* ========== HOME PAGE IMAGES ============= */
+h3 {
+  font-size: 40px; /* main title for this page therefore largest size */
+  color: #400E0E; /* text colour to match navigation bar */
+  text-align: center; /*center of screen */
+}
+
+h4 {
+  text-align: center; /*center text in the middle of the screen */
+  font-size: 18px; /* smaller font */
+  color: #400E0E; /* reoccuring colour-way */
+}
+
+h5 {
+  text-align: center; /*center text in the middle of the screen */
+  font-size: 15px; /* smaller font */
+  color: #400E0E; /* reoccuring colour-way */
+}
+
+/* ========== INFORMATION + LINKS ============= */
 
 .column { /* three image containers */
   float: left; /* float images side by side */
-  width: 33.33%; /* to make 100% of the width roughly */
-  padding: 10px; /* separate the images slightly */
-  height: fit-content; /* exact height */
+  width: 300px;
+  padding: 20px; /* separate the images slightly */
+  padding-top: 10%;
 }
 
-/* ========== PARAGRAPH============= */
-
-p {
-  text-align: center; /*center text in the middle of the screen */
-  font-family: "sans-serif";
-  font-size: 20px; /* smaller font */
-  color: #3d4c5f; /* reoccuring colour-way */
-  padding-left: 15%; /* to prevent text spanning the entire length of the screen */
-  padding-right: 15%; /* to prevent text spanning the entire length of the screen */
+.final-images {
+  opacity: 1.0;
 }
 
-/* ========== SCREEN 1/2/3/4 BUTTON DETAIL  ============= */
+.individual-images:hover {
+    opacity: 0.8; /* css animation */
+  }
 
-#beginButton,
-#nextButton,
-#calculateButton,
-#resButton {
-  background-color: #3d4c5f; /* matching navigation bar - bold against background */
-  border: none; 
-  color: white; /* white text against grey/blue */
-  padding: 10px 40px; /* background space around text within button */
-  text-align: center; /* positioned in the center of the screen */
+.group-4 { /* center title */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.link a { /* visuals for anchor tags */
+  color:#400E0E;
+  background-color: transparent;
   text-decoration: none;
-  margin: 4px 2px; 
-  cursor: pointer; /* user aware its a button which can be pressed */
-  border-radius: 16px;
-  font-size: 20px; 
-  font-family: "sans-serif";
+  padding-bottom: 45%;
 }
 
-/* ========== SCREEN 1/2/3/4 CHANGES ============= */
-
-#screen-1, /*  four main screens */
-#screen-2, 
-#screen-3, 
-#screen-4 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-} /* code above ensures all content is positioned centrally */
-
-
-/* ========== SCREEN TWO STYLING ============= */
-
-/* ========== SCREEN TWO TITLE============= */
-
-h2 {
-  margin-top: 200px; /* distance from navigation bar */
-  font-family: "sans-serif";
-  font-size: 50px; /* main title for this page therefore largest size */
-  color: #3d4c5f;
-  text-align: center;  /* sits centrally */
+.link a:hover {
+  color:#BCA373;
 }
 
-/* ========== PAGE ICON ============= */
-
-.icon { /* linked from font awesome */
-  text-align: center; /* sits centrally */
-  padding-bottom: 3%;
-  font-size: 100px; /* size of icon */
-  color: #7da7c6; /* different colour to stand out */
+.h3-xtra {
+  padding-top:3%;
 }
 
-/* ========== BUDGET SECTION ============= */
+/* ========== SCROLLING ============= */
 
-.budget-amount {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 2%;
-} /* code above ensures all content is positioned centrally */
+.star { /* scroll interaction visuals */
+  font-size:30px; /* each have the same size and colour */ 
+  color:#BCA373; 
+  margin-right:400px; /* position within the screen differs */
+}
 
-.budget-table {
-padding-bottom: 20%;
-font-size: 20px; 
-color: #3d4c5f;
-} /* distance between table and button */
+.stars-wrap {
+  display:flex;
+}
 
+.feature { /* scroll interaction #2 visuals */
+  font-size:30px;
+  color:#BCA373; 
+  padding-left:25%;
+}
 
-/* ========== SCREEN THREE STYLING ============= */
+.features-wrap {
+  display:flex;
+}
 
-/* ========== EXPENSES SECTION ============= */
+.hero { /* scroll interaction #3 visuals */
+  font-size:30px;
+  color:#BCA373; 
+  margin-right:400px;
+}
 
-.expenses {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 2%;
-} /* code above ensures all content is positioned centrally */
+.heros-wrap {
+  display:flex;
+}
 
-.expenses-table {
-  padding-bottom: 20%;
-} /* distance between table and button */
+/* SHOELACE */
 
-.table-title2 {
-  font-size: 20px; /* larger size as main category titles */
-  color: #3d4c5f;
-} 
+.section-iso {  
+  padding:2em; 
+  height:100vh;
+  overflow:hidden;
+  position:relative; 
+}
 
-.table-subtitle,
-.table-subtitle2,
-.table-subtitle3 {
-  font-size: 15px; 
-  color: #3d4c5f;
-} /* font size and colour for all subtitle rows */
+.pairing-bg { /* broad code */
+  background-size: cover; 
+  position: absolute; 
+  width: 120%; 
+  height:120%; 
+  top:-10%;
+  left:-10%; 
+  z-index:-1;
+}
 
+.pairing-bg.pink { /* #1 illustration image url */
+  background-image: url("images/style.jpg");
+ }
+ 
+.pairing-bg.gold { /* #2 illustration image url */
+  background-image: url("images/gold.jpg");
+ }
 
-/* ========== SCREEN FOUR STYLING ============= */
+/* TOGGLE/SWITCH */
 
-/* ========== RESULTS SECTION ============= */
+#night-toggle { /* positioned at the top right hand corner */
+  position: absolute; 
+  top: 5%;
+  right: 5%;
+}
 
-.results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 2%;
-} /* code above ensures all content is positioned centrally */
+/* REVIEW BUTTON DIALOG */
 
-.result, 
-.indi-result {
-  font-size: 20px; 
-  color: #3d4c5f;
-} /* titles size and colour for each row */
+#review-button { 
+  text-align:left;
+}
 
-.result-table {
-  padding-bottom: 10%;
-} /* distance between table and button */
-
-
-/* ========== CONDITIONAL ============= */
-
-#conditional-image {
-  height:150px;
-} /* conditional images size */
-
+#review-button h4 { /* appears in the middle of the screen but text aligned to the left */
+  text-align:left;
+}

@@ -1,113 +1,92 @@
 console.log("JavaScript is working!");
 
-// store the screens as variables //
-let screen1 = document.querySelector("#screen-1");
-let screen2 = document.querySelector("#screen-2");
-let screen3 = document.querySelector("#screen-3");
-let screen4 = document.querySelector("#screen-4");
+// audio element layout
+const bgMusic = new Audio('audio/bgmusic.wav');
 
-// store the buttons as variables //
-let beginButton = document.querySelector("#beginButton");
-let nextButton = document.querySelector("#nextButton");
-let calculateButton = document.querySelector("#calculateButton");
-let resButton = document.querySelector("#resButton");
-let homeButton= document.querySelector("#home-button"); // apart of the fixed navigation bar - shown on all screens //
-
-// begin button functionality //
-beginButton.addEventListener("click", function () { // event listener used to run the function once the button is clicked //
-    screen1.style.display = "none";
-    screen2.style.display = "flex"; // flex = when the button is clicked it takes users to this page not the rest //
-    screen3.style.display = "none"; // each button has a specific page it 'flexs' to as shown below //
-    screen4.style.display = "none"; // this process allows for the effect of different screens //
+const soundBtn = document.querySelector('#sound-btn');
+soundBtn.addEventListener('click', () => {
+  
+  if(bgMusic.paused){
+    bgMusic.play();
+    soundBtn.name = 'volume-up';
+  }else{
+    bgMusic.pause();
+    soundBtn.name = 'volume-mute';
+  }
+  
 });
 
-// next button functionality //
-nextButton.addEventListener("click", function () {
-    screen1.style.display = "none";
-    screen2.style.display = "none"; // same function as above but varied "flex" //
-    screen3.style.display = "flex"; // budget page button which transports user to the expense page //
-    screen4.style.display = "none";
+// scroll interaction structure #2
+const tlStars = gsap.timeline ({
+  scrollTrigger: {
+      trigger: '.stars-section',
+      start: "center bottom",
+      scrub: true
+  }
 });
 
-// restart button functionality //
-resButton.addEventListener("click", function () {
-    screen1.style.display = "flex";
-    screen2.style.display = "none"; // same function as above but varied "flex" //
-    screen3.style.display = "none"; // result page button which allows users to restart the process //
-    screen4.style.display = "none";
-});
+tlStars.from ('.star', {y:-300, opacity:0, duration: 2, ease:"power4.out", stagger:0.1});
 
-// home button functionality //
-homeButton.addEventListener("click", function () {
-    screen1.style.display = "flex"; 
-    screen2.style.display = "none"; // same function/structure as above" //
-    screen3.style.display = "none"; // as the home button is attached to a fixed navigation bar users can click to return to the home page from any screen //
-    screen4.style.display = "none";
-});
-
-
-function calculation () {
-    let budget = Number(document.querySelector(".budget").value);
-
-    let transportItem1 = Number(document.querySelector(".transport-item1").value); // connects "table-inputs" and user results to create an individual total for each expense category //
-    let transportItem2 = Number(document.querySelector(".transport-item2").value); // process repeated for each category - transport, accomodation, food //
-    let transportItem3 = Number(document.querySelector(".transport-item3").value); // total transport ($) //
-
-    let accomodationItem1 = Number(document.querySelector(".accomodation-item1").value); // process, structure and function repeated for each category - total accomodation ($) //
-    let accomodationItem2 = Number(document.querySelector(".accomodation-item2").value); 
-    let accomodationItem3 = Number(document.querySelector(".accomodation-item3").value);
-
-    let foodItem1 = Number(document.querySelector(".food-item1").value); // process, structure and function repeated for each category - total food ($) //
-    let foodItem2 = Number(document.querySelector(".food-item2").value); 
-    let foodItem3 = Number(document.querySelector(".food-item3").value);
-
-    let transportSubtotal = transportItem1 + transportItem2 + transportItem3; // this equation creates the total expense ($) for transport //
-    let accomodationSubtotal = accomodationItem1 + accomodationItem2 + accomodationItem3; // this equation creates the total expense ($) for accomodation //
-    let foodSubtotal = foodItem1 + foodItem2 + foodItem3; // this equation creates the total expense ($) for food //
-
-    let transportSubtotalValue = document.querySelector(".transport-subtotal-value"); // connecting "indi-result-inputs" and the transport category subtotal due to results in table // 
-    transportSubtotalValue.innerHTML = transportSubtotal.toFixed(2); // the to.Fixed(2) code means the results will be to the second decimal place //
-
-    let accomodationSubtotalValue = document.querySelector(".accomodation-subtotal-value");
-    accomodationSubtotalValue.innerHTML = accomodationSubtotal.toFixed(2); // same process as above but for the accomodation category and includes rounded decimals // 
-
-    let foodSubtotalValue = document.querySelector(".food-subtotal-value");
-    foodSubtotalValue.innerHTML = foodSubtotal.toFixed(2); // same process as above but for the food category and includes rounded decimals //
-
-    let totalExpenses = transportSubtotal + accomodationSubtotal + foodSubtotal; // calculation which adds each expense category subtotal to create a total expense result //
-
-    let averageExpenseItem = transportSubtotal + accomodationSubtotal + foodSubtotal/3; // calculation which adds each expense category subtotal and divides it by 3 to get an average expense result //
-    
-    let netResult = budget - totalExpenses; // net result calculation that subtracts the users inital budget with their total expenses //
-
-    let netResultValue = document.querySelector (".net-result-value");
-    netResultValue.innerHTML = netResult.toFixed(2); // relates to code above - connects the 'net-result-value' to the results written in the previous table/s // 
-
-    let totalExpensesValue = document.querySelector (".total-expenses-value");
-    totalExpensesValue.innerHTML = totalExpenses.toFixed(2); // relates to code above - connects the 'total-expenses-value' to the results written in the previous table/s // 
-
-    let averageExpenseItemValue= document.querySelector (".average-expense-item-value");
-    averageExpenseItemValue.innerHTML = averageExpenseItem.toFixed(2); // relates to code above - connects the 'average-expense-item-value' to the results written in the previous table/s // 
-
-    let conditionalText = document.querySelector("#conditional-text"); // an image/text will appear if the user has a positive result otherwise another image/text will appear if the user has a negative result //
-    let conditionalImage = document.querySelector("#conditional-image");
-
-    if (netResult > 0) {
-        conditionalText.innerText = "Congratulations, you have budgeted well!";
-        conditionalImage.src= "./images/Green-tick.png"; // the conditional text/image if the user has a positive result //
-    } else {
-        conditionalText.innerText = "Oh no, it looks like you need a larger budget!";
-        conditionalImage.src ="./images/Red-cross.png"; // the conditional text/image if the user has a negative result //
+// scroll interaction structure #2
+const tlFeatures = gsap.timeline ({
+    scrollTrigger: {
+        trigger: '.features-section',
+        start: "center bottom",
+        scrub: true
     }
+});
+
+tlFeatures.from ('.feature', {y:-300, opacity:0, duration: 2, ease:"power4.out", stagger:0.1});
+
+// scroll interaction structure #3
+const tlHeros = gsap.timeline ({
+  scrollTrigger: {
+      trigger: '.heros-section',
+      start: "center bottom",
+      scrub: true
+  }
+});
+
+tlHeros.from ('.hero', {y:-300, opacity:0, duration: 2, ease:"power4.out", stagger:0.1});
+
+// load scene function 
+function loadScene (){
+    //gsap timeline 
+    const tl = new TimeLineMax()
+    //animate elements 
+    .to ('#night-toggle-tooltip',{open:true});
 }
 
-
-// calculate button functionality //
-
-calculateButton.addEventListener("click", function () {
-    screen1.style.display = "none";
-    screen2.style.display = "none"; // same function as previous buttons with varied "flex" //
-    screen3.style.display = "none"; // expense page button which transports user to the results page - provides final budget results //
-    screen4.style.display = "flex";
-    calculation ();
+// detect toggle/switch change 
+let nightToggle = document.querySelector ('#night-toggle');
+nightToggle.addEventListener('sl-change', () => {
+  if( nightToggle.checked === true ){
+    isoNightMode ();
+  } else {
+    isoDayMode ();
+  }
 });
+
+function isoNightMode (){
+    //gsap timeline 
+    const tl = new TimeLineMax();
+    // animate elements 
+    tl.to ('.pairing-bg.pink', {opacity:0, duration:0.5})
+    .to ('.pairing-bg.gold', {opacity:1, duration:0.5},'-=0.5');
+}
+
+function isoDayMode (){
+    //gsap timeline 
+    const tl = new TimeLineMax();
+    // animate elements 
+    tl.to ('.pairing-bg.gold', {opacity:0, duration:0.5})
+    .to ('.pairing-bg.pink', {opacity:1, duration:0.5},'-=0.5');
+}
+
+// review button dialog 
+const reviewDialogBtn =document.querySelector ('.review-sent-btn');
+const reviewDialog = document.querySelector ('#review-button');
+//click to trigger dialog show 
+reviewDialogBtn.addEventListener ('click', () => reviewDialog.show () );
+
+loadScene ();

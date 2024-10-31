@@ -5,173 +5,296 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css"> <!-- connects html to css-->
-  <title>Holiday Budget Calculator</title> <!-- name of website -->
+  <title>Arms Of Eve</title> <!-- name of website -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/7e87a7c49f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ensures icons will appear as link is provided -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"> <!-- ensures shoelcace components will work as connected -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script> <!-- ensures shoelcace components will work as connected -->
+  <link rel="stylesheet" href="styles.css"> <!-- connects html to css-->
+  
 </head>
 
 
 <body>
 
-<nav> <!-- navigation bar learnt from www3schools -->
+<!-- NAVAGATION BAR -->
+
+<nav> <!-- navigation bar learnt from w3schools -->
   <div class="icon-bar">
-    <a href="#" id="home-button"><i class="fa fa-home"></i></a> <!-- main home button that links users back home from each screen -->
+    <div class="bar-button"> 
+      <a href="#" id="home-button"><i class="fa fa-home"></i></a> <!-- all icons referened from font awesome -->
+      <a href="#" id="search-button"><i class="fa fa-search"></i></a>
+      <a href="#" id="envelope-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" id="user-button"><i class="fa fa-fw fa-user"></i></a>
+    </div>  
   </div>
 </nav>
 
-<!-- FIRST SCREEN -->
+<!-- GIF VIDEO -->
 
-<div id="screen-1">
-  <h1> Holiday Budget Calculator! </h1> <!-- overall website title -->
-
-  <div class="images">
-    <div class="column"> <!-- image included is my own - location relevant to Holiday context -->
-      <img src="images/Location.jpg" alt="Location image" style="width:100%"> 
-    </div>
-    <div class="column"> <!-- image included is my own - views relevant to Holiday context-->
-      <img src="images/Views.jpg" alt="Views image" style="width:100%">
-    </div>
-    <div class="column"> <!-- image included is my own - food relevant to expense category-->
-      <img src="images/Food.jpg" alt="Food image" style="width:100%">
-    </div>
-  </div> 
-
-  <p> Are you planning a trip away and need to clarify your expenses? We've got you covered :)
-  Use our calculator below to confirm your holiday budget! </p> <!-- paragraph that provides context to the website/makes it clear for users -->
-
-  <button id="beginButton">Let's Begin</button> <!-- first button that lets users start the process -->
+<div class="loop"> 
+  <video controls autoplay muted loop> <!-- gif plays automatically and on repeat as soon as user clicks onto website -->
+    <source src="movie.mp4" type="video/mp4">
+  </video>
 </div>
+  
+<!-- AUDIO COMPONTENT -->
 
-<!--SECOND SCREEN - USER BUDGET INPUT -->
+<header>
+  <sl-icon-button name="volume-up" id="sound-btn"></sl-icon-button> <!-- audio must be clicked to play -->
+</header>
 
-<div id="screen-2">
-  <h2> Budgeted Amount</h2> <!-- screen 2 title - user initial spending input -->
+<!-- ABOUT US -->
 
-  <div class="icon"> 
-   <i class="fa fa-cloud"></i>
-  </div> <!-- icon adds an interesting but simple element to the website - cloud used to references traveling by plane -->
-
-  <div class="second-page-inputs">
-
-  <div>
-  <table class="budget-table"> <!-- first table implementation -->
-    <tr> 
-      <th>Budget</th>
-    </tr> <!-- first table title -->
-    
-    <tr class="table-inputs"> 
-       <td><input class="budget" type="number" name="budget" placeholder="$"></td>
-    </tr> <!-- firt table content - allows user to write/calculate their unique budget -->
-  </table>
+<div class ="group-1"> <!--display:flex to sit components horizontally in css -->
+  <div class="text-group"> <!-- div between title and paragraph to ensure those two components align vertically -->
+    <h2> About Us</h2> 
+    <p> Effortless affordable jewellery & fashion accessories that celebrate beauty, crosses culture, defies trends and spans seasons. Our accessories are an extension of who we are a piece of our personality, a vehicle for self-expression and true reflection of personal style. </p>
   </div>
 
-  <button id="nextButton">Next</button>
-  </div> <!-- second button that leads users to the expenses table screen -->
-</div>
-    
-<!--THIRD SCREEN - USER EXPENSE INPUT  -->
-
-<div id="screen-3">
-  <h2> Expenses </h2> <!-- screen 3 title - breakdown of individual categories of expenses -->
-
-  <div class="third-page-inputs">
-
-  <div class="expenses">
-  <table class="expenses-table"> <!-- second table implementation - with more rows -->
-
-    <tr class = table-title2>
-      <th>Transport</th>
-      <th>Accomodation</th>
-      <th>Food</th>
-    </tr> <!-- main three expense categories as headings -->
-
-    <tr class = table-subtitle>
-      <th>Airport</th>
-      <th>Hotel 1</th>
-      <th>Breakfast</th>
-    </tr> <!-- first row of expenses relevant to all three categories mentioned above -->
-
-    <tr class="table-inputs"> 
-      <td><input class="transport-item1" type="number" name="value" placeholder="$"></td>
-      <td><input class="accomodation-item1" type="number" name="value" placeholder="$"></td>
-      <td><input class="food-item1" type="number" name="value" placeholder="$"></td>
-    </tr> <!-- first row content - users add their estimated spends for the airport transport, accomodation 1 and breakfast -->
-
-      <tr class = table-subtitle2>
-      <th>Hotel</th>
-      <th>Airbnb</th>
-      <th>Lunch</th>
-    </tr> <!-- second row of expenses relevant to all three categories mentioned above -->
-
-    <tr class="table-inputs"> 
-      <td><input class="transport-item2" type="number" name="value" placeholder="$"></td>
-      <td><input class="accomodation-item2" type="number" name="value" placeholder="$"></td>
-      <td><input class="food-item2" type="number" name="value" placeholder="$"></td>
-    </tr> <!-- second row content - users add their estimated spends for hotel transport, accomodation 2 and lunch -->
-
-    <tr class = table-subtitle3>
-      <th>Activities</th>
-      <th>Hotel 2</th>
-      <th>Dinner</th>
-    </tr> <!-- third row of expenses relevant to all three categories mentioned above -->
-
-    <tr class="table-inputs"> 
-      <td><input class="transport-item3" type="number" name="value" placeholder="$"></td>
-      <td><input class="accomodation-item3" type="number" name="value" placeholder="$"></td>
-     <td><input class="food-item3" type="number" name="value" placeholder="$"></td>
-    </tr> <!-- third row content - users add their estimated spends for activity transport, accomodation 3 and dinner -->
-  </table>
+  <div class="imagery-group"> <!--individual div so image sits to the right -->
+    <img src="images/video.png" alt="About Us image-video" style="width:100%"> 
+  </div>
 </div>
 
-  <button id="calculateButton">Calculate</button>
-  </div>  <!-- third button that leads users to the result table screen -->
-</div>
+<!-- ILLUSTRATION -->
 
+<div class="section-iso">
+  <sl-tooltip content="See more styling options" placement="bottom-end"> <!-- number 1 shoelace component tool tip -->
+    <sl-switch id="night-toggle">Click Here</sl-switch>  <!-- number 2 shoelace component switch -->
+  </sl-tooltip>
 
-<!--FORTH PAGE - OUTPUT TO -->
-
-<div id="screen-4">
-  <h2> Results ($) </h2> <!-- screen 4 title - breakdown of results that show the users outputs -->
-
-  <div class="results">
-    <table class="result-table">
-    
-      <tr class = result> 
-        <th>Net Result</th> <!-- title for net results -->
-        <th>Total of All Expenses</th> <!-- title for total expenses-->
-        <th>Average Expense Item</th> <!-- title for average expenses -->
-      </tr> <!-- three main output results as headings -->
-
-      <tr class="result-inputs"> 
-        <td class="net-result-value"></td>
-        <td class="total-expenses-value"></td>
-        <td class="average-expense-item-value"></td>
-      </tr> <!-- first row of results - users initial input + expenses are calculated to then show their estimated budgets outcome in regards to net value/total expenses/average expenses -->
-
-      <tr class = indi-result>
-        <th>Total Transport Expenses</th>
-        <th>Total Accomodation Expenses</th>
-        <th>Total Food Expenses</th>
-        </tr> <!-- headings for the three main expense categories (1. transport, 2. accomodation, 3. food) -->
-
-      <tr class="indi-result-inputs"> <!-- each category shows the average expense result of the 3 individual categories -->
-        <td class="transport-subtotal-value"></td> <!-- airport result ($) + hotel result ($) + activity result ($) /3 -->
-        <td class="accomodation-subtotal-value"></td> <!-- hotel 1 result ($) + airbnb result ($) + hotel 2 result ($) /3 -->
-        <td class="food-subtotal-value"></td> <!-- breakfast result ($) + lunch result ($) + dinner result ($) /3 -->
-      </tr>
-    </table>
-
-    <div>
-      <p id="conditional-text"></p> <!-- leave blank because this information is stored -->
-      <img id="conditional-image" alt="conditional image"> <!-- says it is missing a src when i place into a html checker? - not sure -->
-    </div>
-
-    </div>
-    <button id="resButton">Restart</button> <!-- fourth button that leads users to the initial spending input screen (2) -->
+  <div class="pairing-bg pink">  <!-- switch used to display two illustrations -->
   </div>
 
-<script src="main.js"></script> <!-- at the end so java reads the above code -->
+  <div class="pairing-bg gold"> <!-- background images one + two -->
+  </div>
+</div>
+
+<!-- JEWELLERY CATEGORIES -->
+
+<div class="title">
+  <h3> Jewellery Categories </h3> <!-- title for page -->
+</div>
+
+<!-- FEATURE #1 -->
+
+<div class="stars-section"> <!-- gsap used to create this scrolling animation -->
+  <div class="stars-wrap">
+    <div class="star">
+      <i class="fa-solid fa-star"></i> <!-- icon referenced from font awesome -->
+    </div>
+  
+    <div class="star">
+      <i class="fa-solid fa-star"></i>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+
+<div class="responsive"> <!-- structure for each image category -->
+  <div class="gallery"> <!-- includes an image, category name and link to shop -->
+    <a target="_blank" href="images/bracelete.png">
+      <img src="images/bracelete.png" alt="Bracelete"> <!-- each image a similar aesthetic -->
+    </a>
+    <div class="desc">Braceletes</div>
+    <div class="desc1">
+      <a href="https://armsofeve.com/collections/bracelets">Shop Now</a>
+    </div>
+  </div>
+</div>
+  
+<div class="responsive"> <!-- structure repeated for earrings -->
+  <div class="gallery">
+    <a target="_blank" href="images/earrings.png">
+      <img src="images/earrings.png" alt="Earrings">
+    </a>
+    <div class="desc">Earrings</div>
+    <div class="desc1">
+      <a href="https://armsofeve.com/collections/earrings">Shop Now</a>
+    </div>
+  </div>
+</div>
+  
+<div class="responsive"> <!-- structure repeated but for necklace -->
+  <div class="gallery">
+    <a target="_blank" href="images/necklace.png">
+      <img src="images/necklace.png" alt="Necklaces">
+    </a>
+    <div class="desc">Necklaces</div>
+    <div class="desc1">
+      <a href="https://armsofeve.com/collections/necklaces">Shop Now</a>
+    </div>
+  </div>
+</div>
+  
+<div class="responsive"> <!-- structure repeated but for rings category-->
+  <div class="gallery">
+    <a target="_blank" href="images/rings.png">
+      <img src="images/rings.png" alt="Rings">
+    </a>
+    <div class="desc">Rings</div>
+    <div class="desc1">
+      <a href="https://armsofeve.com/collections/rings">Shop Now</a>
+    </div>
+  </div>
+</div>
+    
+<div class="clearfix"></div>
+
+<!-- REVIEW PAGE -->
+
+<div class="half-half1"> <!-- broad div that wraps all code + adapted in css to ensure content displays next to one another -->
+<div class="container3"> <!-- contains text, an input table and button all in one div - this can then be aligned vertically to one side of the screen in css-->
+  <div class="detail">
+    <h3> Review </h3>
+  <div class="table-tr">
+    <tr class="table-inputs">
+      <input class="budget" type="text" name="budget" placeholder="...">
+    </tr> <!-- allows user to write their experience/review of the site -->
+  </div>
+
+  <button class="review-sent-btn">Submit</button> <!-- button which user clicks to submit result -->
+  </div>
+
+<sl-dialog label="Sent and Recieved" id="review-button"> <!-- number 3 shoelace component dialog -->
+  <h4> Review has been recieved. Thank you!</h4> <!-- once button is clicked, a text box will appear to confirm the review has been recieved -->
+</sl-dialog>
+</div> 
+
+<div class="container1"> <!-- separate div that contains an image that will cover 50% of the screen and sit next to the 'container3' details above -->
+  <div class="image-half1">
+    <img src="images/jewels.png" alt="Stack" style="width:100%"> 
+  </div>
+</div>
+</div>
+    
+<!-- HALF IMAGE GALLERY -->
+
+<div class="half-half"> <!-- similar process to the one above but with different components -->
+  <div class="container1"> <!-- separate div that contains an image that will cover 50% of the screen and sit next to the 'container2' details below -->
+    <div class="image-half1"> 
+      <img src="images/stack.png" alt="Stack" style="width:100%"> <!-- 50% image translates to the smaller image gallery visuals -->
+    </div>
+  </div>
+
+<div class="container2"> <!-- contains a variety of text, links and imagery - vertical scroll image gallery -->
+  <div class="gallery2">
+    <div class="desc-1">BEST-SELLING EARRING STACK</div> <!-- main title for the 50% page -->
+    <img src="images/1st.png" alt="Gallery Image 1"> <!-- product image, name and link found for each image group -->
+    <div class="desc">Magnetic Soul Hoops</div> 
+    <div class="desc2">
+      <a href="https://bycharlotte.com.au/products/18k-gold-vermeil-magnetic-soul-hoops-18k-gold-vermeil">Shop Now</a>
+    </div>
+
+    <img src="images/2nd.png" alt="Gallery Image 2"> <!-- structure repeated like above - layout remains the same for each just product is adapted -->
+    <div class="desc">Sweet Droplet Earring</div> 
+    <div class="desc2">
+      <a href="https://bycharlotte.com.au/products/14k-solid-gold-diamond-sweet-droplet-cartilage-flatback-earring">Shop Now</a>
+    </div>
+
+    <img src="images/3rd.png" alt="Gallery Image 3"> <!-- structure repeated -->
+    <div class="desc">Blooming Lotus Crystal Earring</div>
+    <div class="desc2">
+      <a href="https://bycharlotte.com.au/products/14k-solid-gold-blooming-lotus-crystal-cartilage-earring">Shop Now</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SHARE THE LOVE SOCIAL MEDIA PAGE -->
+
+<div class="group-3"> 
+  <div class="title-3"> <!-- new section title and paragraph information -->
+    <div class="h3-xtra">
+      <h3> Share The Love </h3>
+    </div>
+      <h4> Follow us on Instagram to be inspired by our favourite looks @armsofeve </h4>  
+      <h5> "I like to think that each piece is a love letter to the modern woman" - Kerryn Langer</h5>  
+  </div>
+
+<!-- FEATURE #2 -->
+
+<div class="features-section"> <!-- gsap structure used again for same scrolling animation but with difference class name -->
+  <div class="features-wrap">
+    <div class="feature">
+      <i class="fa-solid fa-star"></i> <!-- same icon used -->
+    </div>
+    
+    <div class="feature">
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-star"></i>
+    </div>
+  </div>
+</div>
+  
+<div class="scroll-container3"> <!-- horizontal scrolling image gallery for social media screen -->
+  <div class = "images">
+    <img src="images/1.png" alt="Starfish earrings">
+    <img src="images/2.png" alt="Earring stack">
+    <img src="images/3.png" alt="Two peoples earrings">
+    <img src="images/4.png" alt="Two necklace closeup">
+    <img src="images/5.png" alt="Person posing">
+    <img src="images/6.png" alt="Necklace stack">
+    </div>
+  </div>
+</div>
+  
+<!-- INFORMATION + LINKS -->
+ 
+<div class="group-4">
+  <div class="h3-xtra"> <!-- title for final page -->
+  <h3> Arms Of Eve Information </h3> 
+</div>
+
+<!-- FEATURE #3-->
+
+<div class="heros-section"> <!-- final scroll animation screen - gsap referenced in main.js file -->
+  <div class="heros-wrap">
+    <div class="hero">
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="hero">
+      <i class="fa-solid fa-star"></i>
+    </div>
+  </div>
+</div>
+
+<div class="final-images"> <!-- final page contents - imagery and various links -->
+  <div class="column"> <!-- a horizontal row of three images -->
+    <div class="individual-images"> <!-- each follows the same dimensions  -->
+      <img src="images/shop.png" alt="Store Image" style="width:100%"> 
+    </div>
+    <div class="link"> <!-- links appear in the middle underneath the images and if clicked transport users to a separate screen -->
+      <a href="https://armsofeve.com/pages/store-locator">Visit Our Stores</a>
+    </div>
+  </div>
+  <div class="column"> <!-- structured repeated for each image section -->
+    <div class="individual-images">
+      <img src="images/activity.png" alt="Activity Image" style="width:100%">
+    </div>
+    <div class="link">
+      <a href="https://armsofeve.com/pages/contact-us">Book An Appointment</a>
+    </div>
+  </div>
+  <div class="column">  <!-- structured repeated for each image section -->
+    <div class="individual-images">
+      <img src="images/interior.png" alt="Interior Image" style="width:100%">
+    </div>
+    <div class="link">
+      <a href="https://armsofeve.com/">Peircing Studio</a>
+    </div>
+  </div>
+</div> 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script> <!-- links the broad gsap file so main.js can work to create animations -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> <!-- specifically links the scroll trigger gsap file so main.js can create this trigger -->
+<script src="main.js"></script>
+
 </body>
-
 </html>
