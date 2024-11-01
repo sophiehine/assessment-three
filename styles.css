@@ -50,7 +50,7 @@ body { /* immediate text style and background colour unless specified */
 /* ========== GIF VIDEO ============= */
 
 video {
-  padding-top: 3%; /* starts slightly below the nav bar */
+  padding-top: 5%; /* starts slightly below the nav bar */
   width:100vw; /* takes up entire screen width */ 
 }
 
@@ -73,6 +73,7 @@ p {
 
 .text-group { /* ensures items within this div centrally align */
   padding-left:8%;
+  padding-bottom: 5%;
   display: flex; 
   flex-direction: column; 
   align-items: center;
@@ -83,7 +84,7 @@ p {
 .imagery-group { /* size and position of image - to the right */ 
   margin-top: 130px;
   margin-bottom:130px;
-  width:90%;
+  width:1000px;
   padding-right: 8%;
 }
 
@@ -152,39 +153,6 @@ div.desc1 a { /* visuals for the anchor tag */
   content: "";
   display: table;
   clear: both;
-}
-
-/* ========== EARRING STACK ============= */
-
-.desc-1 { /* visuals for title above imagery gallery */
-  padding-top: 5%;
-  color:#400E0E;
-  text-align: center;
-  font-size: 20px;
-}
-
-div.desc { /* visuals for subtitles within image gallery */
-  text-align: center;
-  color:#400E0E;
-}
-
-div.desc2 { /* distance between subtitles and anchor tag */
-  padding: 5px;
-  text-align: center;
-}
-
-div.desc2 a { /* visuals for the anchor tag */
-  text-decoration: none;
-  color:#400E0E;
-  padding-bottom:18%;
-}
-
-.desc2 a:hover { /* additional colour change animation upon hover */
-  color:#BCA373;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 /* ========== REVIEW PAGE ============= */
@@ -287,6 +255,37 @@ div.desc2 a { /* visuals for the anchor tag */
   height:55vh;
 }
 
+.desc-1 { /* visuals for title above imagery gallery */
+  padding-top: 5%;
+  color:#400E0E;
+  text-align: center;
+  font-size: 20px;
+}
+
+div.desc { /* visuals for subtitles within image gallery */
+  text-align: center;
+  color:#400E0E;
+}
+
+div.desc2 { /* distance between subtitles and anchor tag */
+  padding: 5px;
+  text-align: center;
+}
+
+div.desc2 a { /* visuals for the anchor tag */
+  text-decoration: none;
+  color:#400E0E;
+  padding-bottom:18%;
+}
+
+.desc2 a:hover { /* additional colour change animation upon hover */
+  color:#BCA373;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* ========== SHARE THE LOVE ============= */
 
 div.scroll-container3 { /* horizontal image gallery */
@@ -368,6 +367,12 @@ h5 {
 
 .h3-xtra {
   padding-top:3%;
+}
+
+@media only screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
 }
 
 /* ========== SCROLLING ============= */
