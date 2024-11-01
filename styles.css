@@ -1,11 +1,7 @@
-* {
-  box-sizing: border-box;
-}
 
 /* ========== BODY ============= */
 
 html { 
-  scroll-padding-top: 100px;
   scroll-behavior: smooth;
 }
 
@@ -72,7 +68,7 @@ p {
 }
 
 .text-group { /* ensures items within this div centrally align */
-  padding-left:8%;
+  padding-left: 8%;
   padding-bottom: 5%;
   display: flex; 
   flex-direction: column; 

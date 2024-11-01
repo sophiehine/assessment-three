@@ -90,3 +90,7 @@ const reviewDialog = document.querySelector ('#review-button');
 reviewDialogBtn.addEventListener ('click', () => reviewDialog.show () );
 
 loadScene ();
+
+
+// validator says arrow function isn't available (=>) but followed lecture structure??? 
+// gsap + TimeLineMax said to be not defined but once again followed lecture structure???
